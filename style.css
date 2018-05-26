@@ -1,0 +1,9 @@
+.container {
+    width: 500px;
+    background-color: #ddd;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+}
