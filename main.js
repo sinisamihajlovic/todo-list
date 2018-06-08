@@ -1,36 +1,28 @@
-// Add item
+// Add list item
 let addItemBtn = document.querySelector('#addItemBtn');
 let newListItem = document.querySelector('ol');
-//let items = [];
 
 addItemBtn.addEventListener('click', addNewListItem);
 
 function addNewListItem() {
-  addListItemText();
-  addDelBtnToListItem();
-  //items.push()
-}
-
-function addListItemText() {
+  let dateId = Date.now();
   let node = document.createElement('li');
-  let textNode = document.createTextNode('List item');
+  let textNode = document.createTextNode(dateId);
+  let delBtn = document.createElement('button');
+  let delBtnTextNode = document.createTextNode('delete');
+
+  delBtn.appendChild(delBtnTextNode);
   node.appendChild(textNode);
+  node.appendChild(delBtn);
   newListItem.appendChild(node);
+  
+  node.setAttribute('id', dateId);
+  delBtn.addEventListener('click', () => deleteItem(dateId));
 }
 
-function addDelBtnToListItem() {
-  let node = document.createElement('button');
-
-  let textNode = document.createTextNode('delete');
-  node.appendChild(textNode);
-  newListItem.appendChild(node);
-}
-
-// Delete item
-
-
-function deleteItem() {
-
+// Delete list item
+function deleteItem(dateId) {
+  document.getElementById(dateId).parentElement.removeChild(document.getElementById(dateId));
 }
 
 // Clear list
