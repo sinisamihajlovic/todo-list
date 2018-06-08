@@ -1,6 +1,6 @@
 // Add list item
-let addItemBtn = document.querySelector('#addItemBtn');
-let newListItem = document.querySelector('ol');
+const addItemBtn = document.querySelector('#addItemBtn');
+const newListItem = document.querySelector('ol');
 
 addItemBtn.addEventListener('click', addNewListItem);
 
