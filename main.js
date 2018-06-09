@@ -1,13 +1,20 @@
 // Add list item
 const addItemBtn = document.querySelector('#addItemBtn');
 const newListItem = document.querySelector('ol');
+let newListItemText = document.querySelector('#taskText');
 
 addItemBtn.addEventListener('click', addNewListItem);
+newListItemText.addEventListener('keyup', function(event) {
+  event.preventDefault();
+  if (event.code === 'Enter') {
+    addItemBtn.click();
+  }
+});
 
 function addNewListItem() {
   let dateId = Date.now();
   let node = document.createElement('li');
-  let textNode = document.createTextNode(dateId);
+  let textNode = document.createTextNode(newListItemText.value);
   let delBtn = document.createElement('button');
   let delBtnTextNode = document.createTextNode('delete');
 
@@ -16,6 +23,8 @@ function addNewListItem() {
   node.appendChild(delBtn);
   newListItem.appendChild(node);
   
+  newListItemText.value = '';
+
   node.setAttribute('id', dateId);
   delBtn.addEventListener('click', () => deleteItem(dateId));
 }
