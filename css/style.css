@@ -1,0 +1,13 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.column {
+    background-color: lightgray;
+    padding: 10px;
+}
+
+li > button {
+    color: red;
+    margin: 10px;
+}

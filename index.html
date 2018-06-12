@@ -5,23 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>To Do List</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Todo list webapp">
+    <meta name="author" content="Siniša Mihajlović">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>To Do List</h1>
-            <div>
-                <label for="taskText">New task: </label>
-                <input id="taskText" type="text" name="taskText" placeholder="Enter new task here" autocomplete="off">
-                <button id="addItemBtn">Add task</button>
+        <div class="row">
+            <div class="column">
+                <h1>To Do List</h1>
+                <div>
+                    <label for="taskText">New task: </label>
+                    <input id="taskText" type="text" name="taskText" placeholder="Enter new task here" autocomplete="off">
+                    <button class="button-primary" id="addItemBtn">Add task</button>
+                </div>
+                <br>
+                <button id="clearList">Clear list</button>
+            </div>            
+        </div>
+        <hr>
+        <div class="row">
+            <div class="column">
+                <ol></ol>
             </div>
-            <br>
-            <br>
-            <br>
-            <button id="clearList">Clear list</button>
-        </header>
-        <ol></ol>
+        </div>
     </div>
     <script src="main.js"></script>
 </body>

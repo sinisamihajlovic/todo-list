@@ -1,4 +1,4 @@
-// Add list item
+// Add new task
 const addItemBtn = document.querySelector('#addItemBtn');
 const newListItem = document.querySelector('ol');
 let newListItemText = document.querySelector('#taskText');
@@ -12,7 +12,7 @@ newListItemText.addEventListener('keyup', function(event) {
 });
 
 function addNewListItem() {
-  let dateId = Date.now();
+  let dateId = Date.now(); // Delete btn id
   let node = document.createElement('li');
   let textNode = document.createTextNode(newListItemText.value);
   let delBtn = document.createElement('button');
@@ -29,7 +29,7 @@ function addNewListItem() {
   delBtn.addEventListener('click', () => deleteItem(dateId));
 }
 
-// Delete list item
+// Delete task
 function deleteItem(dateId) {
   document.getElementById(dateId).parentElement.removeChild(document.getElementById(dateId));
 }
